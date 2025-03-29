@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark JP Tolentino - Personal Webpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Mark JP Tolentino</h1>
+        <p>Tech Enthusiast | Developer | Cybersecurity Explorer</p>
+        <button id="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('bio')">About Me</a>
+        <a onclick="showSection('interests')">Interests</a>
+        <a onclick="showSection('projects')">Projects</a>
+        <a onclick="showSection('skills')">Skills</a>
+        <a onclick="showSection('blog')">Blog</a>
+        <a onclick="showSection('contact')">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Homepage Section -->
+        <div class="home" id="home">
+            <h2>Welcome to My Digital Space</h2>
+            <p>Explore my world of tech, cybersecurity, and development. Sign in or sign up to join the journey, or check out my projects below!</p>
+            <button onclick="showSection('signin')">Sign In</button>
+            <button onclick="showSection('signup')">Sign Up</button>
+            <button onclick="showSection('projects')">Explore My Projects</button>
+        </div>
+
+        <!-- Sign In Form -->
+        <div class="signin" id="signin">
+            <h2>Sign In</h2>
+            <form onsubmit="handleSubmit(event, 'Sign In')">
+                <label for="signin-username">Username:</label>
+                <input type="text" id="signin-username" name="username" required><br>
+                <label for="signin-password">Password:</label>
+                <input type="password" id="signin-password" name="password" required><br>
+                <button type="submit">Submit</button>
+            </form>
+            <button class="back-btn" onclick="showSection('home')">Back to Home</button>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div class="signup" id="signup">
+            <h2>Sign Up</h2>
+            <form onsubmit="handleSubmit(event, 'Sign Up')">
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" name="username" required><br>
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="email" required><br>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="password" required><br>
+                <button type="submit">Submit</button>
+            </form>
+            <button class="back-btn" onclick="showSection('home')">Back to Home</button>
+        </div>
+
+        <!-- About Me Section -->
+        <div class="bio" id="bio">
+            <h2>About Me</h2>
+            <p>Hi, I’m Mark JP Tolentino! I’m a tech enthusiast with a passion for coding, cybersecurity, and building projects that solve real problems. When I’m not diving into code on GitHub or exploring the latest in AI, you’ll find me hunting for bug bounties, pentesting systems, and sharpening my skills on TryHackMe and Hack The Box. I’m also an active participant in HackerOne, chasing vulnerabilities and securing the web—one bug at a time. Welcome to my digital space!</p>
+            <button class="back-btn" onclick="showSection('home')">Back to Home</button>
+        </div>
+
+        <!-- Interests Section -->
+        <div class="interests" id="interests">
+            <h2>Interests</h2>
+            <ul>
+                <li>Software Development</li>
+                <li>Web Development</li>
+                <li>Cybersecurity & System Protection</li>
+                <li>Artificial Intelligence & Machine Learning</li>
+            </ul>
+            <button class="back-btn" onclick="showSection('home')">Back to Home</button>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="projects" id="projects">
+            <h2>My Projects</h2>
+            <div class="project">
+                <h3>Web Vulnerability Scanner</h3>
+                <p>A Python-based tool I built to scan websites for common vulnerabilities like XSS and SQL injection. Currently in development, but I’ve already found a few bugs with it!</p>
+            </div>
+            <div class="project">
+                <h3>Secure Chat App</h3>
+                <p>A web app with end-to-end encryption, built using JavaScript and Node.js. I created this to learn more about secure communication protocols.</p>
+            </div>
+            <div class="project">
+                <h3>TryHackMe Leaderboard Bot</h3>
+                <p>A bot that tracks my progress on TryHackMe and posts updates to a Discord server. Written in Python with web scraping techniques.</p>
+            </div>
+            <button class="back-btn" onclick="showSection('home')">Back to Home</button>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="skills" id="skills">
+            <h2>My Skills</h2>
+            <ul>
+                <li>Programming: Python, JavaScript, HTML/CSS</li>
+                <li>Cybersecurity: Penetration Testing, Bug Bounty Hunting</li>
+                <li>Tools: Burp Suite, Metasploit, Nmap</li>
+                <li>Platforms: TryHackMe, Hack The Box, HackerOne</li>
+                <li>Other: Web Development, AI Basics</li>
+            </ul>
+            <button class="back-btn" onclick="showSection('home')">Back to Home</button>
+        </div>
+
+        <!-- Blog Section -->
+        <div class="blog" id="blog">
+            <h2>My Blog</h2>
+            <div class="blog-post">
+                <h3>Top 5 Tips for Bug Bounty Beginners</h3>
+                <p>Sharing my experience from HackerOne—how to find your first bug, tools to use, and staying motivated. <a onclick="alert('Blog post coming soon!')">Read more</a></p>
+            </div>
+            <div class="blog-post">
+                <h3>Pentesting with TryHackMe: My Journey</h3>
+                <p>A walkthrough of my favorite TryHackMe rooms and what I learned about network security. <a onclick="alert('Blog post coming soon!')">Read more</a></p>
+            </div>
+            <div class="blog-post">
+                <h3>Building a Secure Web App: Lessons Learned</h3>
+                <p>Key takeaways from my secure chat app project, including how to implement encryption. <a onclick="alert('Blog post coming soon!')">Read more</a></p>
+            </div>
+            <button class="back-btn" onclick="showSection('home')">Back to Home</button>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact" id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:tolentinomarkjp@gmail.com">tolentinomarkjp@gmail.com</a></p>
+            <p>Twitter: <a href="https://x.com/gatus_jepoy" target="_blank">@gatus_jepoy</a></p>
+            <p>GitHub: <a href="https://github.com/markjptolentino" target="_blank">github.com/markjptolentino</a></p>
+            <button onclick="showSection('contact-form')">Say Hi!</button>
+            <button class="back-btn" onclick="showSection('home')">Back to Home</button>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form" id="contact-form">
+            <h2>Send Me a Message</h2>
+            <form onsubmit="handleContactSubmit(event)">
+                <label for="contact-name">Name:</label>
+                <input type="text" id="contact-name" name="name" required><br>
+                <label for="contact-email">Email:</label>
+                <input type="email" id="contact-email" name="email" required><br>
+                <label for="contact-message">Message:</label>
+                <textarea id="contact-message" name="message" required></textarea><br>
+                <button type="submit">Send</button>
+            </form>
+            <button class="back-btn" onclick="showSection('contact')">Back to Contact</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+    </footer>
+
+    <!-- Link to external JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
